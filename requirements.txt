@@ -1,0 +1,17 @@
+Django==4.1.13
+djangorestframework==3.14.0
+pymongo[srv]==3.12.3
+djongo==1.3.6
+pytz==2019.3
+django-cors-headers==4.3.0
+python-dotenv==1.0.0
+psycopg2-binary==2.9.9
+beautifulsoup4==4.12.2
+requests==2.31.0
+web3==6.13.0
+cryptography
+channels[daphne]
+channels-redis
+openpyxl
+# pyodbc
+# mssql-django

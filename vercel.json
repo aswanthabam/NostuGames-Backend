@@ -1,0 +1,15 @@
+{
+  "builds": [
+    {
+      "src": "votechain/wsgi.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "votechain/wsgi.py"
+    }
+  ],
+  "regions": ["bom1"]
+}
