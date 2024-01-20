@@ -13,5 +13,6 @@ cryptography
 channels[daphne]
 channels-redis
 openpyxl
+daphne==4.0.0
 # pyodbc
 # mssql-django

@@ -51,6 +51,8 @@ TEMPLATES = [
 
 ASGI_APPLICATION = 'nostubackend.asgi.app'
 
+WSGI_APPLICATION = "nostubackend.wsgi.app"
+
 CHANNEL_LAYERS = {
     "default": {
         "BACKEND": "channels_redis.core.RedisChannelLayer",
@@ -60,6 +62,7 @@ CHANNEL_LAYERS = {
     },
 }
 
+print("Channel : ",CHANNEL_LAYERS)
 
 if os.environ.get('DB_ENGINE', 'django.db.backends.postgresql') == 'djongo':
     DATABASES = {
