@@ -1,3 +1,3 @@
 #!/bin/bash
 python manage.py collectstatic --noinput
-daphne -b 0.0.0.0 -p 8000 nostubackend.asgi:application
+daphne -b 0.0.0.0 -p 8000 nostubackend.asgi:app
