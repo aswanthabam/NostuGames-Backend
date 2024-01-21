@@ -2,6 +2,33 @@
 from db.models import *
 from channels.db import database_sync_to_async
 
+class RoomManager:
+    @staticmethod
+    @database_sync_to_async
+    def get_room(room_code,name=None,game=None) -> GameRoom | None:
+        return GameRoom.objects.filter(code=room_code).first()
+
+    @staticmethod
+    @database_sync_to_async
+    def create_room(room_code,game) -> GameRoom:
+        return GameRoom.objects.create(code=room_code,game=game)
+
+    @staticmethod
+    @database_sync_to_async
+    def add_member(room:GameRoom,name) -> GameMember:
+        return GameMember.objects.create(name=name,room=room)
+
+    @staticmethod
+    @database_sync_to_async
+    def get_members(room:GameRoom) -> list[GameMember]:
+        members = GameMember.objects.filter(room=room)
+        return [member for member in members]
+
+    @staticmethod
+    @database_sync_to_async
+    def get_member(room:GameRoom,user_id:str) -> GameMember:
+        return GameMember.objects.filter(id=user_id,room=room).first()
+
 class BingoManager:
     @staticmethod
     @database_sync_to_async
