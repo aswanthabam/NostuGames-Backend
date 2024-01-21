@@ -18,8 +18,8 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'rest_framework',
     'corsheaders',
-    'api',
-    'db'
+    'db',
+    'api'
 ]
 
 CORS_ALLOW_ALL_ORIGINS= True
@@ -68,7 +68,7 @@ if os.environ.get('DB_ENGINE', 'django.db.backends.postgresql') == 'djongo':
     DATABASES = {
         'default': {
             'ENGINE': 'djongo',
-            'NAME': os.environ.get('DB_NAME', 'votechain'),
+            'NAME': os.environ.get('DB_NAME', 'nostugames'),
             'ENFORCE_SCHEMA': False,
             'CLIENT': {
                 'host': os.environ.get('DB_URL', 'mongodb://localhost:27017/'),
