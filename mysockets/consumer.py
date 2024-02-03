@@ -104,8 +104,8 @@ class BingoGame(AsyncWebsocketConsumer):
             "message":event["message"]
         }))
     
-    async def disconnect(self, close_code):
-        # Leave room group
+    # async def disconnect(self, close_code):
+    #     # Leave room group
 
-        await self.end_group(self.room.code)
-        pass
+    #     await self.end_group(self.room.code)
+    #     pass
